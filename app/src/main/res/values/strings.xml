@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AWS (s3_bucket)</string>
+    <string name="aws_loading">AWS (loading)</string>
+</resources>

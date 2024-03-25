@@ -1,0 +1,13 @@
+{
+  "resourceName": "s3friendlyname",
+  "policyUUID": "bd5fda18",
+  "bucketName": "mtaphotocollagemaker",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "READ"
+  ],
+  "groupAccess": {}
+}
