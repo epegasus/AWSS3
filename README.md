@@ -102,12 +102,81 @@ amplify init
     `region` 
 ```
  
-4.  
+4.  Declare feature of AWS that we'll be using (e.g. storage s3_bucket)
+
+```
+amplify add storage
+```
+
+S3_bucket configuration
+
+```
+? Please select from one of the below mentioned services:
+> Content (Images, audio, video, etc.)
+  NoSQL Database
+? Please provide a friendly name for your resource that will be used to label this category in the project:
+> mystorage
+? Please provide bucket name:
+> mybucket
+```
+
+Access permissions to bucket
+
+```
+? Restrict access by?
+> Auth/Guest Users
+  Individual Groups
+  Both
+  Learn more
 
 
+? Who should have access:
+❯ Auth users only
+  Auth and guest users
 
+? What kind of access do you want for Authenticated users?
+  ◯ create/update
+> ◉ read
+  ◯ delete
+? What kind of access do you want for Guest users?
+  ◯ create/update
+> ◉ read
+  ◯ delete
 
+? Do you want to add a Lambda Trigger for your S3 Bucket? (y/N)
+-> N
+```
 
+Finally push all changes
+```
+amplify push
+```
 
+This will download `amplifyConfiguration.json` and `awsconfiguration.json` in **res/raw** folder.
+Once done, you have successfully establish connection with AWS server.
 
+### Android Project Implementation
 
+Add following dependency
+
+```
+dependencies {
+    implementation 'com.amplifyframework:aws-storage-s3:ANDROID_VERSION'
+    implementation 'com.amplifyframework:aws-auth-cognito:ANDROID_VERSION'
+}
+```
+
+Add following plugins in appClass
+```
+        try {
+            val config = AmplifyConfiguration.fromConfigFile(applicationContext, R.raw.amplifyconfiguration)
+            Amplify.addPlugin(AWSCognitoAuthPlugin())
+            Amplify.addPlugin(AWSS3StoragePlugin())
+            Amplify.configure(config, applicationContext)
+            Log.i(TAG, "App: Amplify -> Initialized Amplify")
+        } catch (error: AmplifyException) {
+            Log.e(TAG, "App: Amplify -> Could not initialize Amplify", error)
+        }
+```
+
+### AWS S3-Bucket is ready, upload files and try to fetch file using this repository code.
