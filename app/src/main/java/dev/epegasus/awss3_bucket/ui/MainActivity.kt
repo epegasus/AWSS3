@@ -1,4 +1,4 @@
-package dev.epegasus.awss3_bucket
+package dev.epegasus.awss3_bucket.ui
 
 import android.os.Bundle
 import android.util.Log
@@ -9,9 +9,8 @@ import com.amplifyframework.storage.options.StorageDownloadFileOptions
 import com.amplifyframework.storage.options.StoragePagedListOptions
 import com.google.android.material.imageview.ShapeableImageView
 import com.google.android.material.textview.MaterialTextView
+import dev.epegasus.awss3_bucket.R
 import java.io.File
-
-const val TAG = "TAG_AWS"
 
 class MainActivity : AppCompatActivity() {
 
@@ -64,5 +63,9 @@ class MainActivity : AppCompatActivity() {
             }, {
                 textView.text = "Failure: ${it.message}"
             })
+    }
+
+    companion object {
+        private const val TAG = "TAG_AWS"
     }
 }
