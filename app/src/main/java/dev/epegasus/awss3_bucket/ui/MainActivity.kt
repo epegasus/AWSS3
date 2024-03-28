@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getFile() {
-        val key = "dp.PNG"
+        val key = "girl.jpg"
 
         val file = File("${applicationContext.cacheDir}/$key")
         if (file.exists()) {
