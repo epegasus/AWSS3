@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    // Required by amplify when R8 gets enabled
     alias(libs.plugins.parcelize)
 }
 
