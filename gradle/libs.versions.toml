@@ -1,13 +1,14 @@
 [versions]
 agp = "8.3.1"
 kotlin = "1.9.22"
-coreKtx = "1.12.0"
+coreKtx = "1.13.0"
 appcompat = "1.6.1"
 material = "1.11.0"
-activity = "1.8.2"
+activity = "1.9.0"
 constraintlayout = "2.1.4"
-awsStorageS3 = "2.14.12"
-awsAuthCognito = "2.14.12"
+awsStorageS3 = "2.15.1"
+awsAuthCognito = "2.15.1"
+desugar_jdk_libs = "2.0.4"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -17,6 +18,7 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 aws-storage-s3 = { group = "com.amplifyframework", name = "aws-storage-s3", version.ref = "awsStorageS3" }
 aws-auth-cognito = { group = "com.amplifyframework", name = "aws-auth-cognito", version.ref = "awsAuthCognito" }
+desugar_jdk_libs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugar_jdk_libs" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

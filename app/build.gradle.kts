@@ -30,6 +30,7 @@ android {
         }
     }
     compileOptions {
+        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
@@ -47,4 +48,5 @@ dependencies {
 
     implementation(libs.aws.storage.s3)
     implementation(libs.aws.auth.cognito)
+    coreLibraryDesugaring(libs.desugar.jdk.libs)
 }
